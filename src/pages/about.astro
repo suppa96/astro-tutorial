@@ -1,20 +1,30 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
 
+const pageTitle = "About me"
+
+const identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "web developer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+---
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>About me</title>
+        <title>{pageTitle}</title>
     </head>
     <body>
-        <div>        
-            <a href="/" aria-label="Back to home" title="Go to Home">Back to Home</a>
-            <a href="/about" aria-label="About section" title="Go to About">About</a>
-            <a href="/blog" aria-label="My Blog section" title="Go to My Blog">My Blog</a>
-        </div>
-
-        <h1>About me</h1>
-        <p>Hola, my name is Alessandro, I'm an Italian developer trying to build something cool with Astro.</p>
-        <p>I'm only using this because I like the CI interface (Houston is very cute)</p>
+<DefaultLayout>
+    
+            <h1>About me</h1>
+            <p>Hola, my name is {identity.firstName}, I'm a {identity.occupation} from {identity.country} trying to build something cool with Astro.</p>
+            <p>I'm only using this because I like the CI interface (Houston is very cute)</p>
+</DefaultLayout>
     </body>
 </html>

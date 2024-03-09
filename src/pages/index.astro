@@ -1,5 +1,7 @@
 ---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
 
+const pageTitle= "Home"
 ---
 
 <html lang="en">
@@ -8,15 +10,12 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
-        <div>        
-            <a href="/" aria-label="Back to home" title="Go to Home">Back to Home</a>
-            <a href="/about" aria-label="About section" title="Go to About">About</a>
-            <a href="/blog" aria-label="My Blog section" title="Go to My Blog">My Blog</a>
-        </div>
-
-		<h1>This a cool astro page</h1>
+        <DefaultLayout>
+                    <h1>This a cool astro page</h1>
+                    <img src="../assets/images/ridge-racer-type-4.gif" alt="Ridge racer gif" />
+        </DefaultLayout>
 	</body>
 </html>
